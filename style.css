@@ -1,0 +1,52 @@
+#wrapper {
+  text-align: center;
+}
+
+h1, h2, h3, h4 {
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  font-size: 13.3333px;
+}
+
+li:not(:first-child, :last-child):has(.plus) {
+  line-height: 0;
+}
+
+li:has(.plus) {
+  padding: 1px;
+}
+
+.plus {
+  padding: 0;
+  width: 30px;
+  transition: 0.5s;
+}
+
+:not(:hover, :hover+li, :has(+:hover))>.plus {
+  opacity: 0.1;
+  transition: 7s;
+}
+
+:not(:first-child, :last-child)>.plus {
+  height: 10px;
+  line-height: 5px;
+  outline: none;
+}
+
+.item>button {
+  min-width: 50px;
+}
+
+.buttons {
+  margin-top: 1em;
+}

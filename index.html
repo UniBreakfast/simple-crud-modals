@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="head">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' style='background:black'><text y='16' font-family='Trebuchet MS' font-weight='900' fill='orange'>UB</text></svg>">
+
+  <!--<link rel="stylesheet" href="reset.css">-->
+  <!--<link rel="stylesheet" href="base.css">-->
+  <link rel="stylesheet" href="style.css">
+  <!--<script type="module" src="app.js"></script>-->
+  <script src="script.js" defer></script>
+
+  <title>Simple CRUD Modals</title>
+</head>
+
+<body id="body" onload="wrapper.showModal()">
+  <dialog id="wrapper">
+    <h2>Items</h2>
+
+    <ul id="list">
+      <li>
+        <button class="plus">+</button>
+      </li>
+      <li class="item">
+        <button>Water the flowers</button>
+      </li>
+      <li>
+        <button class="plus">+</button>
+      </li>
+      <li class="item">
+        <button>Take out the trash</button>
+      </li>
+      <li>
+        <button class="plus">+</button>
+      </li>
+      <li class="item">
+        <button>Take over the world</button>
+      </li>
+      <li>
+        <button class="plus">+</button>
+      </li>
+    </ul>
+
+    <dialog id="new-dialog">
+      <form action="new-item" method="dialog">
+        <h3>New Item</h3>
+        
+        <input type="hidden" name="index">
+
+        <label>
+          <span>Text:</span>
+          <input type="text" name="text">
+        </label>
+
+        <div class="buttons">
+          <button class="add" value="add">Add</button>
+          <button class="cancel" value="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="item-dialog">
+      <form action="select-item" method="dialog">
+        <input type="hidden" name="index">
+
+        <h3>
+          <output name="text"></output>
+        </h3>
+
+        <div class="buttons">
+          <button class="edit" value="edit">Edit</button>
+          <button class="delete" value="delete">Delete</button>
+          <button class="close" value="close">Close</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="edit-dialog">
+      <form action="edit-item" method="dialog">
+        <input type="hidden" name="index">
+
+        <h3>
+          <output name="text"></output>
+        </h3>
+
+        <label>
+          <span>New text:</span>
+          <input type="text" name="replacement">
+        </label>
+
+        <div class="buttons">
+          <button class="save" value="save">Save</button>
+          <button class="cancel" value="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="delete-dialog">
+      <form action="delete-item" method="dialog">
+        <input type="hidden" name="index">
+
+        <h3>
+          <output name="text"></output>
+        </h3>
+
+        <p>Are you sure?</p>
+
+        <div class="buttons">
+          <button class="delete" value="delete">Delete permanently!</button>
+          <button class="cancel" value="cancel">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+  </dialog>
+</body>
+
+</html>
