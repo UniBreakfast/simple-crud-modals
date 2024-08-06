@@ -82,7 +82,12 @@ function handleSave(e) {
     const text = editForm.text.value.trim();
     const replacement = editForm.replacement.value.trim();
     
-    if (text != replacement) updateItem(i, replacement);
+    if (!replacement) {
+      e.preventDefault();
+      editForm.replacement.focus();
+    } else if (text != replacement) {
+      updateItem(i, replacement);
+    }
   }
 }
 
